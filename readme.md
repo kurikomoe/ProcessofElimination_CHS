@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/kurikomoe/ProcessofElimination_CHS/total.svg)]()
+
 ### Process of Elimination
 
 
