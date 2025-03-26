@@ -62,10 +62,12 @@ struct TalkDat {
 
    1. Be aware, `TalkEntry` may not stored in offset increase order, so sort before using it.
 
-2. `TalkEntryData` is bytecode script,  text is defined as `0x10 u16(strlen) string 0x00`
+2. `TalkEntryData` is bytecode script,  text is defined as `0x10 u16(strlen) string \x00`
 
-   1. strlen = c-style string length (containing the ending \x00)
+   1. string is "raw string" in utf8, without \x00.
 
-3. `TalkEntryData` may bigger than `TalkEntryData.size`, in `main.go` I just simple add 0x20 more bytes as padding (still use the size as range to fineText)
+   2. strlen = c-style string `size` (containing the ending \x00)
+
+4. `TalkEntryData` may bigger than `TalkEntryData.size`, in `main.go` I just simple add 0x20 more bytes as padding (still use the original size as iter range to find Text)
 
    
